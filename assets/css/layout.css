@@ -112,7 +112,7 @@ main{
   text-transform: uppercase;
 }
 #footer .footer-logo span {
-  font-family: 'HelveticaNeueRoman', serif;
-  letter-spacing: -2vw;
-  font-weight: 400;
+      font-family: var(--helveticaneue), serif;
+    font-weight: 400;
+    letter-spacing: -22px;
 }
