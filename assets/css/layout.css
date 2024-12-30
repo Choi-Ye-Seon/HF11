@@ -1,0 +1,118 @@
+@import './reset.css';
+@import './common.css';
+
+html.fixed {
+  overflow-y: hidden;
+}
+
+/* Header */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  inset: 0% auto auto 0%;
+  width: 100%;
+  padding: 0.8rem 1.8rem;
+  z-index: 999;
+  transition: transform .2s;
+}
+#header .logo {
+  width: 160px;
+}
+#header ul.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+#header li.nav-menu.ownership a {
+  background-color: #000;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+#header li.nav-menu.ownership a:hover {
+  background-color: #373737;
+}
+#header li.nav-menu .text {
+  display: inline-block;
+  transition: .3s;
+}
+#header li.nav-menu .text.active {
+  transform: translateX(-100%);
+}
+#header li.nav-menu.ownership img.active {
+  transform: translateX(-100%);
+}
+#header li.nav-menu.ownership img {
+  transition: .3s;
+}
+#header li.nav-menu:hover .text:not(.active){
+  transform: translateX(100%);
+}
+#header li.nav-menu:hover .text.active{
+  transform: translateX(0);
+}
+#header li.nav-menu.ownership:hover img:not(.active) {
+  transform: translateX(100%);
+}
+#header li.nav-menu.ownership:hover img.active {
+  transform: translateX(0);
+}
+/* btn 애니메이션 효과 공통으로 정리하기 */
+
+/* nav 애니메이션 */
+
+/* main */
+main{
+  position: relative;
+  z-index: 3;
+}
+
+/* footer */
+#footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: sticky;
+  inset: auto 0% 0%;
+  background-color: #242424;
+  width: 100%;
+  height: 40rem;
+  padding: 2rem 2rem 1rem;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#footer .footer-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  position: relative;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.18);
+}
+#footer .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+}
+#footer .footer-logo {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  top: 2rem;
+  right: 0;
+  color: #525252;
+  font-size: 18vw;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+#footer .footer-logo span {
+  font-family: 'HelveticaNeueRoman', serif;
+  letter-spacing: -2vw;
+  font-weight: 400;
+}

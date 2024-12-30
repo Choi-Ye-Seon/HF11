@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HF-11</title>
+
+    <!-- Meta 태그 -->
+    <meta content="HF-11" property="og:title">
+    <meta content="Twins, born in Ukraine, raised in Canada. High School dropouts. Trained in Italy and California. Oilstainlab is their un-medicated vision, a pure manifest of automotive excess &amp; Fun." property="og:description">
+    <meta content="./assets/images/ogimg.jpg" property="og:image">
+    <meta property="og:type" content="website">
+    <!-- // Meta 태그 -->
+    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/layout.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+
+    <!-- jQuery cdn -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- Lenis cdn -->
+    <script src="https://unpkg.com/lenis@1.1.17/dist/lenis.min.js"></script>
+
+    <!-- Gsap ScrollTrigger cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Text Split  -->
+    <script src="https://unpkg.com/split-type"></script>
+
+    <!-- Swiper JS cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- MAIN JS -->
+    <script defer src="./assets/js/main.js"></script>
+</head>
+
+<body>
+
+<!-- cursor -->
+<div id="cursor">
+    <div class="design">
+        <i class="ic-arrow left">
+            <img src="./assets/images/cursor-arrow-right.svg" alt
+                class="el-pa">
+            <img src="./assets/images/cursor-arrow-right.svg" alt>
+        </i>
+        <span>DRAG</span>
+        <i class="ic-arrow">
+            <img src="./assets/images/cursor-arrow-right.svg" alt
+                class="el-pa">
+            <img src="./assets/images/cursor-arrow-right.svg" alt>
+        </i>
+    </div>
+</div>
+
+
+    <!-- Intro -->
+    <div class="sc-intro">
+        <!-- Intro Title -->
+        <div class="intro-title-box">
+            <div class="title-line">
+                <p class="intro-title first">BESPOKE</p>
+                <p class="intro-title active el-pa" aria-hidden="true">BESPOKE</p>
+            </div>
+            <div class="title-line">
+                <p class="intro-title first">MYTH</p>
+                <p class="intro-title active  el-pa" aria-hidden="true">MYTH</p>
+            </div>
+            <div class="title-line">
+                <p class="intro-title first">CHAOS</p>
+                <p class="intro-title active  el-pa" aria-hidden="true">CHAOS</p>
+            </div>
+            <div class="title-line">
+                <p class="intro-title first">MANIAC</p>
+                <p class="intro-title active  el-pa" aria-hidden="true">MANIAC</p>
+            </div>
+        </div>
+        <!-- // Intro Title -->
+        <!-- p태그안에 div 못씀 -->
+        <!-- h1태그 안에 p태그 못씀 : 그래서 div로 바꿈 -->
+        <!-- 로고를 h1으로 쓸 것임-->
+
+        <!-- Intro Footer -->
+        <div class="intro-footer">
+            <span class="caption">California, USA, 90757</span>
+            <button class="btn-enter primary-btn">
+                <div class="btn__text el-pr">
+                    <span class="text">ENTER</span>
+                    <span class="text el-pa">ENTER</span>
+                </div>
+                <div class="btn__ic">
+                    <span class="el-pr">
+                        <img src="./assets/images/arrow-right.svg" alt>
+                        <img src="./assets/images/arrow-right.svg" alt class="el-pa">
+                    </span>
+                    <span class="el-pr">
+                        <img src="./assets/images/arrow-right.svg" alt>
+                        <img src="./assets/images/arrow-right.svg" alt class="el-pa">
+                    </span>
+                </div>
+            </button>
+        </div>
+        <!-- //Intro Footer -->
+
+        <div class="visual-area el-pa">
+            <div class="intro-cover el-pa"></div>
+            <div class="video-bg">
+                <video muted loop autoplay playsinline poster="./assets/video/HF11-Intro-thumb.avif">
+                    <source src="./assets/video/HF11-Intro.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="overlay"></div>
+        <div class="bg-motion white el-pa"></div>
+    </div>
+    <!-- // Intro -->
+
+    <div id="wrap">
+        <!-- Header -->
+        <header id="header">
+            <h1 class="logo"><a href="#"><img src="./assets/images/logo.svg" alt="OILSTAINLAB"></a></h1>
+            <nav>
+                <ul class="nav-list">
+                    <li class="nav-menu el-pr">
+                        <a href="" class="link-menu" onclick="alert('준비중입니다!')">
+                            <span class="text" aria-hidden="true">Gallery</span>
+                            <span class="text active el-pa">Gallery</span>
+                        </a>
+                    </li>
+                    <li class="nav-menu el-pr">
+                        <a href="#" class="link-menu "  data-target="#carTour">
+                            <span class="text" aria-hidden="true">Car tour</span>
+                            <span class="text active el-pa">Car tour</span>
+                        </a>
+                    </li>
+                    <li class="nav-menu el-pr">
+                        <a href="#" class="link-menu"  data-target="#about">
+                            <span class="text" aria-hidden="true">About</span>
+                            <span class="text active el-pa">About</span>
+                        </a>
+                    </li>
+                    <li class="nav-menu ownership">
+                        <a href="" class="link-menu primary-btn" data-target="#oilstainlab">
+                            <div class="btn__text el-pr">
+                                <span class="text">Ownership</span>
+                                <span class="text active el-pa">Ownership</span>
+                            </div>
+                            <div class="btn__ic">
+                                <span class="el-pr">
+                                    <img src="./assets/images/arrow-right-w.svg" alt>
+                                    <img src="./assets/images/arrow-right-w.svg" alt class="active el-pa">
+                                </span>
+                                <span class="el-pr">
+                                    <img src="./assets/images/arrow-right-w.svg" alt>
+                                    <img src="./assets/images/arrow-right-w.svg" alt class="active el-pa">
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- // Header -->
+
+        <!-- Main -->
+        <main id="container">
+            <!-- sc-hero -->
+            <section class="sc-hero">
+                <h2 class="blind">hf-11 스펙</h2>
+                <div class="hero-top ">
+                    <div class="title-wrap el-pr">
+                        <div class="text" aria-hidden="true">
+                            <span>H</span>
+                            <span>F</span>
+                        </div>
+                        <div class="text active el-pa">
+                            <span>H</span>
+                            <span>F</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-bottom">
+                    <div class="hero-info">
+                        <div>
+                            <h2 class="hero-caption">
+                                <div class="flex-item">
+                                    <span class="text"><span class="active">Less</span></span>
+                                    <span class="text"><span class="active">is</span></span>
+                                    <span class="text"><span class="active">more,</span></span>
+                                </div>
+                                <div class="flex-item">
+                                    <span class="text"><span class="active">more</span></span>
+                                    <span class="text"><span class="active">is</span></span>
+                                    <span class="text"><span class="active">less.</span></span>
+                                </div>
+                            </h2>
+                            <a href="" class="link-video">watch video<img src="./assets/images/btn-play.svg" alt></a>
+                            <div class="empty-m" aria-hidden="true"></div>
+                            <ul class="caption-list">
+                                <li class="caption-item " aria-label="weight">
+                                    <div class="flex-item el-pr">
+                                        <div class="text first" aria-hidden="true">1,950</div>
+                                        <div class="text active el-pa">1,950</div>
+                                    </div>
+                                    <span>weight (lbs)</span>
+                                </li>
+                                <li class="caption-item" aria-label="seconds">
+                                    <div class="flex-item el-pr">
+                                        <div class="text first" aria-hidden="true">3.2</div>
+                                        <div class="text active el-pa">3.2</div>
+                                    </div>
+                                    <span>seconds (0-60)</span>
+                                </li>
+                                <li class="caption-item" aria-label="rpm">
+                                    <div class="flex-item el-pr">
+                                        <div class="text first" aria-hidden="true">12,000</div>
+                                        <div class="text active el-pa">12,000</div>
+                                    </div>
+                                    <span>rpm</span>
+                                </li>
+                                <li class="caption-item" aria-label="hp">
+                                    <div class="flex-item el-pr">
+                                        <div class="text first" aria-hidden="true">650</div>
+                                        <div class="text active el-pa">650</div>
+                                    </div>
+                                    <span>hp</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="scroll"><span>scroll</span></div>
+                    </div>
+                    <div class="title-wrap el-pr">
+                        <div class="text" aria-hidden="true">
+                            <span>1</span>
+                            <span>1</span>
+                        </div>
+                        <div class="text active el-pa">
+                            <span>1</span>
+                            <span>1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-bg el-pa" aria-hidden="true">
+                    <div class="hero-bg active el-pa">
+                        <img src="./assets/images/hero-img.webp" alt class="hero-img">
+                    </div>
+                    <img src="./assets/images/hero-bg.webp" alt class="hero-bt el-pa" >
+                </div>
+            </section>
+            <!-- // sc-hero -->
+
+            <!-- sc-sound -->
+            <section class="sc-sound" id="oilstainlab">
+                <div class="content-wrap">
+                    <div class="sound-caption ">
+                        <h2 class="el-pr"><span class="active">oilstainlab</span></h2>
+                        <p>where the past
+                            <br>overtakes the future.
+                        </p>
+                    </div>
+                    <button class="btn-play">engine sound<img src="./assets/images/sound-play.svg" alt aria-label="엔진사운드 미리듣기"></button>
+                    <!-- audio -->
+                    <audio src="./assets/audio/overtake.mp3" preload="auto" muted></audio>
+                </div>
+                <div class="bg-cover"  aria-hidden="true"></div>
+                <div class="bg-overlay el-pa"  aria-hidden="true"></div>
+                <div class="bg-whipe"  aria-hidden="true"></div>
+
+            </section>
+            <!-- // sc-car-sound -->
+
+            <!-- sc-detail -->
+            <div class="scroll-sticky-parent">
+                <div class="scroll-sticky-child">
+                    <section class="sc-detail" id="carTour">
+                        <h2 class="blind">제품 디테일</h2>
+                        <div class="detail-menu">
+                            <ul class="menu-list">
+                                <li class="menu-item">
+                                    <div class="menu-bar"></div>
+                                    <div class="menu-dot"></div>
+                                    <div class="menu-title">power</div>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="menu-bar"></div>
+                                    <div class="menu-dot"></div>
+                                    <div class="menu-title">origin</div>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="menu-bar"></div>
+                                    <div class="menu-dot"></div>
+                                    <div class="menu-title">beauty</div>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="menu-bar"></div>
+                                    <div class="menu-dot"></div>
+                                    <div class="menu-title">asylum</div>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="menu-bar"></div>
+                                    <div class="menu-dot"></div>
+                                    <div class="menu-title">obsession</div>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="menu-bar"></div>
+                                    <div class="menu-dot"></div>
+                                    <div class="menu-title">strength</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="detail-bg">
+                            <div class="bg-top"></div>
+                            <div class="bg-bottom"></div>
+                            <div class="bg-video">
+                                <video autoplay muted playsinline poster="./assets/video/detail-video-thumb.avif">
+                                    <source src="./assets/video/detail-video.mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <a href="" class="link-download primary-btn">
+                            <div class="btn__text el-pr">
+                                <div class="text first">download specs</div>
+                                <div class="text active el-pa">download specs</div>
+                            </div>
+                            <div class="btn__ic el-pr">
+                                <img src="./assets/images/arrow-right-w.svg" alt class="ic-arrow white  el-pa">
+                                <img src="./assets/images/arrow-right.svg" alt class="ic-arrow black">
+                            </div>
+                        </a>
+                    </section>
+                </div>
+            </div>
+            <!-- // sc-detail -->
+
+            <!-- sc-about -->
+            <div class="gray-wrap">
+                <section class="sc-about el-pr" id="about">
+                    <div class="about-inner">
+                        <div class="about-sticky">
+                            <div class="sticky-inner">
+                                <!-- about-nav -->
+                                <div class="about-nav">
+                                    <h2>about</h2>
+                                    <div class="empty-s" aria-hidden="true"></div>
+                                    <ul>
+                                        <li data-target="#maniacs" class="active">maniacs</li>
+                                        <li data-target="#mission">mission</li>
+                                        <li data-target="#machine">machine</li>
+                                    </ul>
+                                </div>
+                                <!-- // about-nav -->
+                                <!-- sticky figure -->
+                                <div class="figure-wrap">
+                                    <figure class="fig-maniacs">
+                                        <div class="overlay" aria-hidden="true"></div>
+                                        <div class="figure-img el-pa"><span class="blind">Maniacs thumb img</span></div>
+                                    </figure>
+                                    <figure class="fig-mission">
+                                        <div class="overlay" aria-hidden="true"></div>
+                                        <div class="figure-img el-pa"><span class="blind">Mission thumb img</span></div>
+                                    </figure>
+                                    <figure class="fig-machine">
+                                        <div class="overlay" aria-hidden="true"></div>
+                                        <div class="figure-img el-pa"><span class="blind">Machine thumb img</span></div>
+                                    </figure>
+                                </div>
+                                <!-- // sticky figure -->
+                            </div>
+                        </div>
+                        <!-- about-contents -->
+                        <div class="about-contents">
+                            <div class="content-wrap">
+                                <div class="content-trigger">
+                                    <div class="content maniacs">
+                                        <div class="scroll-marker" id="maniacs" aria-hidden="true"></div>
+                                        <h3 class="headline">maniacs</h3>
+                                        <p class="desc-b">
+                                            Twins, born in Ukraine, raised in Canada. High School dropouts.
+                                            Trained in Italy and California. Oilstainlab is their un-medicated vision, a
+                                            pure manifest of automotive excess & Fun.
+                                        </p>
+                                        <div class="maniacs-motion" aria-hidden="true">
+                                            <div class="motion-cover" ></div>
+                                            <div class="motion-flicker" >
+                                                <div class="motion-flicker-mask">
+                                                    <div class="motion-item">
+                                                        <div class="motion-img"></div>
+                                                    </div>
+                                                    <div class="motion-item">
+                                                        <div class="motion-img"></div>
+                                                    </div>
+                                                    <div class="motion-item">
+                                                        <div class="motion-img"></div>
+                                                    </div>
+                                                    <div class="motion-item">
+                                                        <div class="motion-img"></div>
+                                                    </div>
+                                                    <div class="motion-item">
+                                                        <div class="motion-img"></div>
+                                                    </div>
+                                                    <div class="motion-item">
+                                                        <div class="motion-img"></div>
+                                                    </div>
+                                                    <div class="motion-item">
+                                                        <div class="motion-img"></div>
+                                                    </div>
+                                                    <div class="motion-item">
+                                                        <div class="motion-img"></div>
+                                                    </div>
+                                                    <div class="motion-item">
+                                                        <div class="motion-img"></div>
+                                                    </div>
+                                                    <div class="motion-item">
+                                                        <div class="motion-img"></div>
+                                                    </div>
+                                                    <div class="motion-item">
+                                                        <div class="motion-img"></div>
+                                                    </div>
+                                                    <div class="motion-item">
+                                                        <div class="motion-img"></div>
+                                                    </div>
+                                                    <div class="motion-item">
+                                                        <div class="motion-img"></div>
+                                                    </div>
+                                                    <div class="motion-item">
+                                                        <div class="motion-img"></div>
+                                                    </div>
+                                                    <div class="motion-item">
+                                                        <div class="motion-img"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <img src="./assets/images/maniacs-view-bg.avif" alt class="motion-bg">
+                                            <div class="text-scroll left">maniacs * maniacs</div>
+                                            <div class="text-scroll right">maniacs * maniacs</div>
+                                            <div class="text-scroll left">maniacs * maniacs</div>
+                                            <div class="text-scroll right">maniacs * maniacs</div>
+                                            <div class="text-scroll left">maniacs * maniacs</div>
+                                            <div class="text-scroll right">maniacs * maniacs</div>
+                                        </div>
+                                        <dl class="content-info">
+                                            <dt>double<br>vision</dt>
+                                            <dd>Our founders “the twins” as commonly referred to by the industry, have
+                                                been
+                                                breaking rules and records; clinching world championships and
+                                                responsible
+                                                for 6.5 million street cars. Maniacally obsessed with forging vehicles,
+                                                experiences and technologies beyond sanity. Inspired by those before
+                                                them,
+                                                Oilstainlab is a new generation of trouble makers, maniacs creating for
+                                                maniacs.</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="content mission">
+                                        <div class="scroll-marker" id="mission" aria-hidden="true"></div>
+                                        <h3 class="headline">mission</h3>
+                                        <p class="desc-b">
+                                            When we started Oilstainlab in 2018, we promised never to be sane. Instead,
+                                            we
+                                            embraced that part of ourselves that had always been truest.
+                                        </p>
+                                        <div class="empty-s" aria-hidden="true"></div>
+                                        <div class="swiper mission">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div class="motion-img">
+                                                        <div class="img-scroll">
+                                                            <div class="img gone"><span class="blind">too far gone image</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <dl class="content-info">
+                                                        <dt>too far<br>gone</dt>
+                                                        <dd>We’re too far gone to resist. Our inner demons have full
+                                                            control. We pine for the frenzy and madness of a bygone era.
+                                                            We
+                                                            vowed to distill this into everything we do, windswept with
+                                                            the
+                                                            latest in technology and innovation. Because we know there
+                                                            are
+                                                            others just like us, tired of lukewarm thrills. Just as
+                                                            addicted
+                                                            to progress as they are to the past.</dd>
+                                                    </dl>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="motion-img">
+                                                        <div class="img-scroll">
+                                                            <div class="img chaos"><span class="blind">controlled chaos image</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <dl class="content-info">
+                                                        <dt>controlled<br>chaos</dt>
+                                                        <dd>
+                                                            Craving something so pure, it won’t merely satisfy. It will
+                                                            totally overwhelm. Chaotic forces tamed and sculpted for
+                                                            unprecedenated joy. Building machines outside of time and
+                                                            place
+                                                            where convention and compromise are disregarded.
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="motion-img">
+                                                        <div class="img-scroll">
+                                                            <div class="img mania"><span class="blind">visual mania image</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <dl class="content-info">
+                                                        <dt>visual<br>mania</dt>
+                                                        <dd>
+                                                            To achieve the impossible, we have become performance
+                                                            extremists. Design radicals. Visual troublemakers who will
+                                                            stop
+                                                            at nothing to deliver the choas and fullfilment of every
+                                                            maniac’s dreams.
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content machine">
+                                        <div class="scroll-marker" id="machine" aria-hidden="true"></div>
+                                        <h3 class="headline">time<br>machine</h3>
+                                        <div class="empty-s" aria-hidden="true"></div>
+                                        <div class="figure-wrap" aria-hidden="true">
+                                            <div class="group-motion past">
+                                                <div class="machine-motion">
+                                                    <div class="img-scroll">
+                                                        <div class="motion-cover"></div>
+                                                        <div class="motion-flicker">
+                                                            <div class="motion-flicker-mask">
+                                                                <div class="motion-item" role="gallery">
+                                                                    <div class="motion-img"></div>
+                                                                </div>
+                                                                <div class="motion-item" role="gallery">
+                                                                    <div class="motion-img"></div>
+                                                                </div>
+                                                                <div class="motion-item" role="gallery">
+                                                                    <div class="motion-img"></div>
+                                                                </div>
+                                                                <div class="motion-item" role="gallery">
+                                                                    <div class="motion-img"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <dl class="content-info">
+                                                    <dt>divergent<br>past</dt>
+                                                    <dd class="desc-b">
+                                                        To find our future we needed to break free from the grip of
+                                                        time.
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                            <div class="group-motion time">
+                                                <div class="machine-motion">
+                                                    <div class="img-scroll">
+                                                        <div class="motion-cover"></div>
+                                                        <div class="motion-flicker">
+                                                            <div class="motion-flicker-mask">
+                                                                <div class="motion-item" role="gallery">
+                                                                    <div class="motion-img"></div>
+                                                                </div>
+                                                                <div class="motion-item" role="gallery">
+                                                                    <div class="motion-img"></div>
+                                                                </div>
+                                                                <div class="motion-item" role="gallery">
+                                                                    <div class="motion-img"></div>
+                                                                </div>
+                                                                <div class="motion-item" role="gallery">
+                                                                    <div class="motion-img"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <dl class="content-info">
+                                                    <dt>time<br>machine</dt>
+                                                    <dd class="dd-size-m">
+                                                        Do you believe in time machines? Neither did we, until we built
+                                                        one.
+                                                        A gateway to the purest era of motorsport. Timeless process and
+                                                        materials, an escaped science experiment from an alternate
+                                                        reality.
+                                                        Few go back to go forward. It would have been insane for us not
+                                                        to.
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                            <div class="group-motion last">
+                                                <h4>
+                                                    When the past overtakes the future. Half-11 Prototype.
+                                                </h4>
+                                                <div class="empty-m" aria-hidden="true"></div>
+                                                <div class="machine-motion">
+                                                    <div class="img-scroll">
+                                                        <div class="motion-cover"></div>
+                                                        <div class="motion-flicker">
+                                                            <div class="motion-flicker-mask">
+                                                                <div class="motion-item" role="gallery">
+                                                                    <div class="motion-img"></div>
+                                                                </div>
+                                                                <div class="motion-item" role="gallery">
+                                                                    <div class="motion-img"></div>
+                                                                </div>
+                                                                <div class="motion-item" role="gallery">
+                                                                    <div class="motion-img"></div>
+                                                                </div>
+                                                                <div class="motion-item" role="gallery">
+                                                                    <div class="motion-img"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // about-contents -->
+                    </div>
+                </section>
+            </div>
+            <!-- // sc-about -->
+
+            <!-- Outro -->
+            <section class="sc-outro el-pr">
+                <h2 class="blind">outro</h2>
+                <div class="outro-inner">
+                    <div class="group-motion-title">
+                        <div class="title-flex el-pr">
+                            <p class="title first" aria-hidden="true">DESCEND&nbsp;INTO</p>
+                            <p class="title active el-pa">DESCEND&nbsp;INTO</p>
+                        </div>
+                        <div class="title-flex el-pr">
+                            <p class="title first" aria-hidden="true">MADNESS</p>
+                            <p class="title active  el-pa">MADNESS</p>
+                        </div>
+                        <div class="title-flex el-pr">
+                            <div class="flex-item el-pr">
+                                <p class="title first" aria-hidden="true">WITH</p>
+                                <p class="title active  el-pa">WITH</p>
+                            </div>
+                            <div class="flex-item design-el" aria-hidden="true">
+                                <div class="border-line-h"></div>
+                                <div class="border-line-v"></div>
+                                <div class="dot"></div>
+                            </div>
+                            <div class="flex-item el-pr">
+                                <p class="title first" aria-hidden="true">YOUR</p>
+                                <p class="title active  el-pa">YOUR</p>
+                            </div>
+                        </div>
+                        <div class="title-flex el-pr">
+                            <div class="flex-item el-pr">
+                                <p class="title first" aria-hidden="true">HF</p>
+                                <p class="title active  el-pa">HF</p>
+                            </div>
+                            <div class="flex-item num el-pr">
+                                <p class="title first" aria-hidden="true">11</p>
+                                <p class="title active  el-pa">11</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group-bg" aria-hidden="true">
+                        <div class="bg-top el-pa"></div>
+                        <div class="bg-img"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- // Outro -->
+        </main>
+
+
+
+
+        <footer id="footer">
+            <h2 class="blind">HF-11 footer</h2>
+            <div class="footer-top">
+                <p class="comment">HF-11 is a registered trademark of OILSTAINLAB LLC.</p>
+                <small class="copyright">All rights reserved. ©2024</small>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-logo">
+                    HF <span>11</span>
+                </p>
+            </div>
+        </footer>
+
+
+        <script>
+            const mission = new Swiper("#about .swiper.mission", {
+                slidesPerView: 1,
+                spaceBetween: 60
+            });
+        </script>
+    </div>
+</body>
+
+</html>
