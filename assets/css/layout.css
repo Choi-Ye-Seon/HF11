@@ -4,13 +4,16 @@
 html.fixed {
   overflow-y: hidden;
 }
+#wrap{
+  min-width: 1440px;
+}
 
 /* Header */
 #header {
   display: flex;
+  position: fixed;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
   inset: 0% auto auto 0%;
   width: 100%;
   padding: 0.8rem 1.8rem;
@@ -58,9 +61,7 @@ html.fixed {
 #header li.nav-menu.ownership:hover img.active {
   transform: translateX(0);
 }
-/* btn 애니메이션 효과 공통으로 정리하기 */
 
-/* nav 애니메이션 */
 
 /* main */
 main{
@@ -82,7 +83,6 @@ main{
   z-index: 1;
   overflow: hidden;
 }
-
 #footer .footer-top {
   display: flex;
   align-items: flex-end;
@@ -107,12 +107,12 @@ main{
   top: 2rem;
   right: 0;
   color: #525252;
-  font-size: 18vw;
+  font-size: 17.25rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 #footer .footer-logo span {
       font-family: var(--helveticaneue), serif;
     font-weight: 400;
-    letter-spacing: -22px;
+    letter-spacing:-2.6rem;
 }

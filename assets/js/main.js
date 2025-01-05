@@ -1,15 +1,14 @@
-// Lenis (smooth scrolling)
+// Lenis scroll
 const lenis = new Lenis();
-
 lenis.on('scroll', ScrollTrigger.update);
-
 gsap.ticker.add((time) => {
   lenis.raf(time * 600);
 });
-
 gsap.ticker.lagSmoothing(0);
 
-// Header scroll
+
+
+// Header scrollTrigger
 let prevScroll = $(window).scrollTop();
 // console.log(`처음 prevScrollpols의 값 : ${prevScroll}`);
 
@@ -17,23 +16,25 @@ $(window).scroll(function () {
   currScroll = $(this).scrollTop();
   // console.log(`현재 currScroll의 값 : ${currScroll}`);
 
-  if (currScroll === 0) {
-    gsap.to('#header', {
-      yPercent: 0, // Q : y : 0 으로 설정하면 작동하지 않는 이유!
+  if (currScroll === 0 ) {
+    gsap.to('#header',{
+      yPercent: 0, 
       backgroundColor: 'transparent'
     });
+
+    // 위로 스크롤
   } else if (prevScroll > currScroll) {
-    // 헤더 bc 투명
     gsap.to('#header', {
-      yPercent: 0, // Q : y : 0 으로 설정하면 작동하지 않는 이유!
+      yPercent: 0, 
       backgroundColor: '#fff'
     });
-  } else {
-    // 헤더 bc #fff
+    // 아래로 스크롤
+  } else  {
     gsap.to('#header', {
       yPercent: -100
     });
   }
+
   prevScroll = currScroll; //스크롤 위치 업데이트
   // console.log(`스크롤을 한 후 prevScroll의 값 : ${prevScroll}`);
 });
@@ -47,10 +48,9 @@ $('#header .link-menu').click(function (e) {
 
 
 // Intro
-// 단어 분할 + span으로 감싸기
+// Intro title
 const headTxt = new SplitType('.sc-intro .intro-title', {types: 'words, chars'});
 
-// Intro Title
 const intro = gsap.timeline({
   onStart: function () {
     $('html').addClass('fixed');
@@ -71,7 +71,7 @@ intro.to('.sc-intro .intro-footer', {y: 0});
 
 // Intro Btn - hover
 const btnHover = gsap.timeline({
-  reversed: true, //역방향 재생 설정 속성
+  reversed: true,
   defaults: {
     duration: 0.2
   }
@@ -93,11 +93,6 @@ $('.sc-intro .btn-enter').hover(
 );
 
 // Intro Btn - click
-// 1. sc-intro 감추기(autoAlpha)
-// 2. sc-intro .bg-motion y축 올라옴.
-// 3. sc-hero 모든 요소 노출
-// 4. 텍스트 모션(y축 및 opacity)
-
 const btnClick = gsap.timeline({
   paused: true,
   onComplete: function () {
@@ -105,7 +100,7 @@ const btnClick = gsap.timeline({
     heroStart.play();
   }
 });
-// intro text 감추기
+// intro text 감추기 모션션
 introLines = $('.sc-intro .title-line').get();
 introLines.forEach(function (introLine) {
   btnClick.to($(introLine).find('.active .char'), {yPercent: -140, stagger: 0.1}, 'a');
@@ -116,36 +111,33 @@ $('.sc-intro .btn-enter').click(function () {
   btnClick.play();
 });
 
+
+
 // Hero Start 애니메이션
-
 const heroCapTxt = new SplitType('.sc-hero .hero-bottom .caption-list .text', {types: 'words, chars'});
-
 const heroStart = gsap.timeline({paused: true});
-
 gsap.set('.sc-intro', {autoAlpha: 1});
 gsap.set('.sc-intro .bg-motion', {yPercent: 100});
 gsap.set('#header, .sc-hero > *', {opacity: 0});
 gsap.set('.sc-hero .hero-bottom .caption-item',{y:60});
 
 heroStart
-  .to('#header', {opacity: 1}, 'show')
-  .to('.sc-hero > *',{opacity: 1}, 'show')
-  .to('.sc-hero .hero-bottom .caption-item',{ y:0},'show')
+.to('#header', {opacity: 1}, 'show')
+.to('.sc-hero > *',{opacity: 1}, 'show')
+.to('.sc-hero .hero-bottom .caption-item',{ y:0},'show')
 
-  .to('.sc-intro', {autoAlpha: 0}, '<+=0.1');
+.to('.sc-intro', {autoAlpha: 0}, '<+=0.1');
 
-  // 텍스트는 동시에
-  gsap.set('.sc-hero .hero-bottom .caption-list .text.active .char', {yPercent: 110});
-  const heroCapLines = document.querySelectorAll('.sc-hero .caption-list .flex-item');
+gsap.set('.sc-hero .hero-bottom .caption-list .text.active .char', {yPercent: 110});
+const heroCapLines = document.querySelectorAll('.sc-hero .caption-list .flex-item');
+// 텍스트 동시 모션션
+heroCapLines.forEach(function (heroCapLine) {
+  heroStart
+  .to(heroCapLine.querySelectorAll('.first .char'), {yPercent: -110, stagger: 0.1}, 'motion+=.5')
+  .to(heroCapLine.querySelectorAll('.active .char'), {yPercent: 0, stagger: 0.1}, 'motion+=.5');
+});
   
- 
- 
-  heroCapLines.forEach(function (heroCapLine) {
-    heroStart
-    .to(heroCapLine.querySelectorAll('.first .char'), {yPercent: -110, stagger: 0.1}, 'motion+=.5')
-    .to(heroCapLine.querySelectorAll('.active .char'), {yPercent: 0, stagger: 0.1}, 'motion+=.5');
-  });
-  
+  // figure, caption 모션
   heroStart
   .to('.sc-hero .hero-bg .hero-img', 2, {yPercent: 100}, 'motion')
 
@@ -156,8 +148,7 @@ heroStart
   .to('.sc-hero .hero-bottom .hero-caption .active', {y: 0, stagger: 0.1}, 'motion+=.5')
   .to('.sc-hero .hero-bottom .link-video', {opacity: 1}, 'motion+=.5');
 
-
-// Hero
+// Hero scrollTrigger
 const hero = gsap.timeline({
   scrollTrigger: {
     trigger: '.sc-hero',
@@ -167,7 +158,6 @@ const hero = gsap.timeline({
     scrub: true
   }
 });
-
 hero.to('.sc-hero .hero-bg .hero-img', {scale: 1.2}, 'hero');
 
 const hero2 = gsap.timeline({
@@ -181,7 +171,9 @@ const hero2 = gsap.timeline({
 });
 hero2.to('.sc-hero .hero-bottom .title-wrap', {y: '-62vh'}, 'hero');
 
-// sc-sound  (완료)
+
+
+// sc-sound 
 const sound = gsap.timeline({
   scrollTrigger: {
     trigger: '.sc-sound',
@@ -207,7 +199,7 @@ $(".sc-sound .btn-play").click(function(){
 
 
 
-// sc-sound / bg-whipe (완료)
+// sc-sound / bg-whipe
 gsap.to('.sc-sound .bg-whipe', {
   scrollTrigger: {
     trigger: '.sc-sound',
@@ -219,7 +211,9 @@ gsap.to('.sc-sound .bg-whipe', {
   y: 0
 });
 
-// sc-detail / detail-menu  (완료)
+
+
+// sc-detail / detail-menu 
 const detail = gsap.timeline({
   scrollTrigger: {
     trigger: '.sc-sound',
@@ -230,11 +224,12 @@ const detail = gsap.timeline({
     toggleActions: 'play none none reverse'
   }
 });
-
 detail.to('.sc-detail .menu-item', {x: 0, stagger: 0.1});
 
+
+
 // sc-about
-// 1. 영역 확대/축소  (완료)
+// 1. 영역 확대/축소
 gsap.to('.sc-about', {
   scrollTrigger: {
     trigger: '.gray-wrap',
@@ -246,7 +241,7 @@ gsap.to('.sc-about', {
   scale: 1
 });
 
-// 2. sticky-inner 100vw -> 50vw (완료)
+// 2. sticky-inner 100vw -> 50vw
 gsap.to('.sc-about .sticky-inner', {
   scrollTrigger: {
     trigger: '.sc-about',
@@ -257,7 +252,7 @@ gsap.to('.sc-about .sticky-inner', {
     scrub: 0
   },
   ease: 'none',
-  width: '50vw'
+  width: '100%'
 });
 
 // fixed 이미지와 content 매칭 시키기 (질문)
@@ -272,6 +267,7 @@ ScrollTrigger.create({
     // console.log(self);
     cnt = $('.sc-about .content-trigger .content').length-1;
     // console.log(cnt);
+    // console.log(self.progress);
     console.log(self.progress*cnt);
     idx = Math.floor(self.progress * cnt);
     // console.log(idx);
@@ -284,17 +280,13 @@ ScrollTrigger.create({
   }
 });
 
-// lenis를 활용하여 원하는 위치로 부드럽게 이동 (완료)
-// data속성을 통해 id값을 저장하고 scrollTo()로 이동시킴
-// lenis.scrollTo() : Lenis 라이브러리의 scrollTo() 메서드는 특정 위치나 요소로 부드럽게 스크롤을 이동시키는 기능
-// 특정위치, 특정 요소로 이동할 수 있음
-// href로 링크 넘기고 scroll-behavior:smooth; 써도 되는데 lenis는 이 방법을 쓸 수 없도록 막아놓음
 $('.sc-about .about-nav li').click(function () {
   const linkAbout = $(this).data('target');
   lenis.scrollTo(linkAbout);
 });
 
-// maniacs bg title 모션 (완료)
+
+// maniacs bg title 모션
 const maniacsBg = gsap.timeline({
   scrollTrigger: {
     trigger: '.sc-about .maniacs',
@@ -309,7 +301,7 @@ gsap.set('.sc-about .maniacs .text-scroll.right', {xPercent: 10});
 
 maniacsBg.to('.sc-about .maniacs .text-scroll.left', {xPercent: 10}, 'a').to('.sc-about .maniacs .text-scroll.right', {xPercent: -10}, 'a');
 
-// maniacs 이미지 모션 (gsap 구현) (완료)
+// maniacs 이미지 시퀀스
 gsap.to('.sc-about .maniacs-motion .motion-item', 0, {
   repeat: -1,
   autoAlpha: 1,
@@ -317,7 +309,7 @@ gsap.to('.sc-about .maniacs-motion .motion-item', 0, {
   stagger: 0.3
 });
 
-// machine 이미지 모션 (past) (완료)
+// machine 이미지 시퀀스 
 $('.sc-about .group-motion.past .motion-item').each(function (i, el) {
   setTimeout(function () {
     $(el).addClass('active').siblings().removeClass('active');
@@ -332,7 +324,8 @@ setInterval(function () {
   });
 }, $('.sc-about .group-motion.past .motion-item').length * 1000);
 
-// machine 이미지 모션 (time) (완료)
+
+// machine 이미지 시퀀스
 $('.sc-about .group-motion.time .motion-item').each(function (i, el) {
   setTimeout(function () {
     $(el).addClass('active').siblings().removeClass('active');
@@ -347,7 +340,8 @@ setInterval(function () {
   });
 }, $('.sc-about .group-motion.time .motion-item').length * 1000);
 
-// machine 이미지 모션 (last) (완료)
+
+// machine 이미지 시퀀스
 $('.sc-about .group-motion.last .motion-item').each(function (i, el) {
   setTimeout(function () {
     $(el).addClass('active').siblings().removeClass('active');
@@ -363,6 +357,7 @@ setInterval(function () {
 }, $('.sc-about .group-motion.last .motion-item').length * 1000);
 
 
+
 // MISSION CURSOR
 $(".sc-about .swiper.mission").hover(
   function(){
@@ -371,13 +366,9 @@ $(".sc-about .swiper.mission").hover(
   $("#cursor").removeClass('show');
 });
 
-
 $(document).mousemove(function (e) {
   xVal = e.clientX;
   yVal = e.clientY;
-  // client : 내가보고있는 window의 크기 (fixed로 고정했을때!)
-  // page : 문서 기준 (absolute로 고정했을 때!)
-  // offset : 특정 영역에서 잡을 때
   gsap.to('#cursor', {
     x: xVal,
     y: yVal
@@ -392,14 +383,12 @@ const speed = 1;
 const xSet = gsap.quickSetter(cursor, 'x', 'px');
 const ySet = gsap.quickSetter(cursor, 'y', 'px');
 
-// mousemove보다 pointermove가 더 광범위! pointermove 이벤트가 있어야 움직일 수 있음
 window.addEventListener('pointermove', (e) => {
   mouse.x = e.x;
   mouse.y = e.y;
 });
 
 gsap.set('#cursor', {xPercent: -50, yPercent: -50});
-// 움직이는 커서 위치를 업데이트 해줌
 gsap.ticker.add(() => {
   const dt = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio());
   pos.x += (mouse.x - pos.x) * dt;
@@ -408,47 +397,9 @@ gsap.ticker.add(() => {
   ySet(pos.y);
 });
 
-// 2. 이미지 모션
-// const about = gsap.timeline({
-//   scrollTrigger:{
-//       trigger:".sc-about",
-//       start:"0% 0%",
-//       end: "100% 100%",
-//       scrub: true,
-//       // markers:true,
-//       toggleActions: "play none none reverse",
-//   }
-// });
 
-// about
-// .to(".sc-about .cover-area",2,{width:'50vw'});
-// 원본은 스크롤 시, 한 번에 넓이가 조절되는 것이 아닌 scrub에 의해 천천히 조절되는 것 같음.
-// 작업물에서는 scrub를 활용하여도, 딱딱 끊기는 현상 발생.
-// Q : cover 영역이 50vw가 되었을 때 view 영역의 콘텐츠도 노출되는 방법?
-// 현재 스크롤 시, cover영역이 좁아지면서 view영역도 함께 스크롤되어 겹치는 현상 발생
-
-// 3. MANIACS view
-//   const maniacsView = gsap.timeline({
-//     scrollTrigger:{
-//         trigger:".sc-about .about-scroll",
-//         start:"25% 80%",
-//         end:"100% 100%",
-//         // markers:true,
-//         scrub:true
-//     }
-//   });
-// maniacsView
-// .to(".sc-about .about-view.maniacs .text-scroll.left",{xPercent:-100})
-// .to(".sc-about .about-view.maniacs .text-scroll.right",{xPercent:100});
-// !! 이미지 배경 text-scroll.right가 끝까지 밀리는 현상 발생
-// !! .left는 작동안하는 상황
-// Q : gsap으로 이미지 전환 모션 구현 방법
-
-// Outro Title (완료)
-
-// split type (글자 쪼개기)
+// Outro Title
 const outroTxt = new SplitType('.sc-outro .title', {types: 'words, chars'});
-
 const outro = gsap.timeline({
   scrollTrigger: {
     trigger: '.sc-outro',
@@ -463,6 +414,12 @@ gsap.set('.sc-outro .title.active .char', {yPercent: 120});
 
 const outroLines = document.querySelectorAll('.sc-outro .title-flex');
 outroLines.forEach(function (outroline) {
-  outro.to(outroline.querySelectorAll('.first .char'), {yPercent: -120, stagger: 0.1}, 'a').to(outroline.querySelectorAll('.active .char'), {yPercent: 0, stagger: 0.1}, 'a');
+  outro
+  .to(outroline.querySelectorAll('.first .char'), {yPercent: -120, stagger: 0.1}, 'a')
+  .to(outroline.querySelectorAll('.active .char'), {yPercent: 0, stagger: 0.1}, 'a');
 });
-outro.to('.sc-outro .design-el .border-line-h', {width: '70%', stagger: 0.1}, 'design').to('.sc-outro .design-el .border-line-v', {height: '40%', stagger: 0.1}, 'design').to('.sc-outro .design-el .dot', {width: '0.4rem', height: '0.4rem', stagger: 0.1}, 'design');
+
+  outro
+  .to('.sc-outro .design-el .border-line-h', {width: '70%', stagger: 0.1}, 'design')
+  .to('.sc-outro .design-el .border-line-v', {height: '40%', stagger: 0.1}, 'design')
+  .to('.sc-outro .design-el .dot', {width: '0.4rem', height: '0.4rem', stagger: 0.1}, 'design');

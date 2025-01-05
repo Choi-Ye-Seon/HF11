@@ -1,8 +1,33 @@
 /* Webfont */
-/* Nunito Sans */
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-/* Cormorant Infant */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('../font/helveticaneue.woff') format('woff'),
+  url('../font/helveticaneue.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PPMori-Book';
+  src: url('../font/PPMori-Book.woff') format('woff'),
+  url('../font/PPMori-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PPMori-ExtraBold';
+  src: url('../font/PPMori-ExtraBold.woff') format('woff'),
+  url('../font/PPMori-ExtraBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PPEditorial';
+  src: url('../font/PPEditorialNew-UltralightItalic.woff') format('woff'),
+  url('../font/PPEditorialNew-UltralightItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 
 /* reset(초기화) */
@@ -15,6 +40,7 @@
   overflow-wrap: break-word;
   -moz-tab-size: 4;
   tab-size: 4;
+  
   --main-font-dark: #202020;
   --dark-orange: #ef4826;
   --lime: #25ff55;
@@ -68,61 +94,6 @@ table {
 }
 
 /* 기본 세팅 */
-
-@font-face{
-  font-family:'PPEditorialNew';
-       src:url('../font/PPEditorialNew-UltralightItalic.woff') format(‘woff’),
-        url('../font/PPEditorialNew-UltralightItalic.otf') format('opentype');
-    font-weight: 200;
-    font-style: normal;
-}
-
-@font-face {
-  font-family: 'HelveticaNeueBold';
-  src: url('../font/HelveticaNeueBold.woff') format('woff'),
-  url('../font/HelveticaNeueBold.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'HelveticaNeueRoman';
-  src: url('../font/HelveticaNeueRoman.woff') format('woff'),
-  url('../font/HelveticaNeueRoman.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'HelveticaNeue';
-  src: url('../font/helveticaneue.woff') format('woff'),
-  url('../font/helveticaneue.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'PPMori-Book';
-  src: url('../font/PPMori-Book.woff') format('woff'),
-  url('../font/PPMori-Book.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'PPMori-ExtraBold';
-  src: url('../font/PPMori-ExtraBold.woff') format('woff'),
-  url('../font/PPMori-ExtraBold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'PPEditorial';
-  src: url('../font/PPEditorialNew-UltralightItalic.woff') format('woff'),
-  url('../font/PPEditorialNew-UltralightItalic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Font */
-
 body {
   font-family: var(--ppmori-extrabold), sans-serif;
   color: var(--main-font-dark);

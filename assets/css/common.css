@@ -1,20 +1,21 @@
-.el-pr{
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
+.el-pr {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
-.el-pa{
-    position: absolute;
-    inset: 0% auto auto 0%;
+.el-pa {
+  position: absolute;
+  inset: 0% auto auto 0%;
 }
-.blind{
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    clip: rect(0,0,0,0);
-    margin: -1px;
-    overflow: hidden;
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+  overflow: hidden;
 }
+
 /* 공백 태그 */
 .empty-s {
   width: 100%;
@@ -24,47 +25,44 @@
   width: 100%;
   padding-bottom: 2rem;
 }
-.primary-btn{
-    display: flex;
-    padding: 1rem 1.2rem 0.9rem;
-    border-bottom-right-radius: 15px;
-    justify-content: space-between;
-    align-items: center;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #000;
+
+/* 공통 버튼 */
+.primary-btn {
+  display: flex;
+  padding: 1rem 1.2rem 0.9rem;
+  border-bottom-right-radius: 15px;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #000;
 }
+
 /* 버튼 화살표 애니메이션 */
 .btn__ic {
-    display: flex;
-  }
+  display: flex;
+}
 .btn__ic img.el-pa {
-    transform: translateX(-100%);
-  }
+  transform: translateX(-100%);
+}
 .btn__ic span:first-child {
-    margin-left: 0.5rem;
-  }
+  margin-left: 0.5rem;
+}
 
-  /* #wrap{
-    padding-bottom: 40rem;
-  } */
-  /* About view */
-  .sc-about .empty{
-    width: 100%;
-    padding-bottom: 1rem;
- }
-
- /* about  */
- .sc-about .content{
+/* About */
+.sc-about .empty {
+  width: 100%;
+  padding-bottom: 1rem;
+}
+.sc-about .content {
   display: flex;
   position: relative;
   flex-direction: column;
   gap: 2rem;
-  border-bottom: 1px solid rgba(0,0,0,.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding-bottom: 8rem;
 }
-
- .sc-about .content .headline {
+.sc-about .content .headline {
   font-size: 3.4rem;
   text-transform: uppercase;
   font-weight: 700;
@@ -93,11 +91,11 @@
   opacity: 0.8;
   line-height: 1.4;
 }
-.sc-about .dd-size-m{
+.sc-about .dd-size-m {
   width: 38ch !important;
 }
 
-/* motion 영역 */
+/* about / motion */
 .sc-about .content .motion-cover {
   position: absolute;
   width: 100%;
@@ -110,7 +108,6 @@
   right: 0;
   height: 100%;
   z-index: 1;
-  /* overflow: hidden; */
   white-space: nowrap;
 }
 .sc-about .content .motion-item {
@@ -120,19 +117,10 @@
   display: inline-block;
   white-space: nowrap;
   background-color: #ccc;
-  /* setTimeout으로 쓸때 필요함 */
-  /* visibility: hidden; */
-  /* text-align: left; */
-  /* vertical-align: top; */
 }
-/* gsap으로 쓸때 필요함 */
-.sc-about .maniacs-motion .motion-item{
+.sc-about .maniacs-motion .motion-item {
   visibility: hidden;
 }
-   /* setTimeout으로 쓸때 필요함 */
-/* .sc-about .maniacs-motion .motion-item.active{
-  visibility: visible;
-} */
 .sc-about .content .motion-img {
   position: relative;
   width: 100%;
