@@ -8,6 +8,7 @@ gsap.ticker.lagSmoothing(0);
 
 
 
+
 // Header scrollTrigger
 let prevScroll = $(window).scrollTop();
 // console.log(`처음 prevScrollpols의 값 : ${prevScroll}`);
@@ -54,6 +55,8 @@ const headTxt = new SplitType('.sc-intro .intro-title', {types: 'words, chars'})
 const intro = gsap.timeline({
   onStart: function () {
     $('html').addClass('fixed');
+
+    lenis.stop();
   },
   invalidateOnRefresh: true
 });
@@ -98,9 +101,10 @@ const btnClick = gsap.timeline({
   onComplete: function () {
     $('html').removeClass('fixed');
     heroStart.play();
+    lenis.start();
   }
 });
-// intro text 감추기 모션션
+// intro text 감추기 모션
 introLines = $('.sc-intro .title-line').get();
 introLines.forEach(function (introLine) {
   btnClick.to($(introLine).find('.active .char'), {yPercent: -140, stagger: 0.1}, 'a');
@@ -255,30 +259,26 @@ gsap.to('.sc-about .sticky-inner', {
   width: '100%'
 });
 
-// fixed 이미지와 content 매칭 시키기 (질문)
-ScrollTrigger.create({
-  trigger: '.sc-about .content-trigger',
-  start: '0% 0%',
-  end: '100% 100%',
-  // scrub:1,
-  // markers: true,
-  onUpdate: function (self) {
-    
-    // console.log(self);
-    cnt = $('.sc-about .content-trigger .content').length-1;
-    // console.log(cnt);
-    // console.log(self.progress);
-    console.log(self.progress*cnt);
-    idx = Math.floor(self.progress * cnt);
-    // console.log(idx);
-    //  !! content영역을 제대로 인식하지 못하고 있음
-    gsap.to('.sc-about figure', {
-      yPercent: -100 * idx
-    });
+// fixed 이미지와 content 매칭
 
-    $('.sc-about .about-nav li').eq(idx).addClass('active').siblings().removeClass('active');
-  }
+$('.sc-about .about-contents .content').each(function(i, el){
+  ScrollTrigger.create({
+    trigger: $(this),
+    start: '0% 15%',
+    end: '100% 15%',
+    // markers: true,
+    toggleActions: "play reverse play reverse",
+    onUpdate:function(){
+      // console.log(i);
+      gsap.to('.sc-about figure',.5, {
+        yPercent: -100 * i,
+        ease:"none"
+      });
+      $('.sc-about .about-nav li').eq(i).addClass('active').siblings().removeClass('active');
+    }
+  });
 });
+
 
 $('.sc-about .about-nav li').click(function () {
   const linkAbout = $(this).data('target');

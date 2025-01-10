@@ -746,9 +746,10 @@ transform: translateX(-100%);
   flex-direction: column;
   gap: 8rem;
 }
-.sc-about .about-contents .content{
+.sc-about .about-contents .content:not(.content.maniacs){
   /* 임시 */
-  border: 10px solid #f00;
+  /* border: 10px solid #f00;
+  margin-top: 8rem; */
 }
 
 
